@@ -1,0 +1,12 @@
++--------+-----------+-----------------------+-----------------+-------------------------------------------------+------------+
+| Domain | Method    | URI                   | Name            | Action                                          | Middleware |
++--------+-----------+-----------------------+-----------------+-------------------------------------------------+------------+
+|        | GET|HEAD  | /                     |                 | Closure                                         | web        |
+|        | GET|HEAD  | api/produto           | produto.index   | Crud\Http\Controllers\ProdutoController@index   | api        |
+|        | POST      | api/produto           | produto.store   | Crud\Http\Controllers\ProdutoController@store   | api        |
+|        | GET|HEAD  | api/produto/{produto} | produto.show    | Crud\Http\Controllers\ProdutoController@show    | api        |
+|        | PUT|PATCH | api/produto/{produto} | produto.update  | Crud\Http\Controllers\ProdutoController@update  | api        |
+|        | DELETE    | api/produto/{produto} | produto.destroy | Crud\Http\Controllers\ProdutoController@destroy | api        |
+|        | GET|HEAD  | api/user              |                 | Closure                                         | api        |
+|        |           |                       |                 |                                                 | auth:api   |
++--------+-----------+-----------------------+-----------------+-------------------------------------------------+------------+
