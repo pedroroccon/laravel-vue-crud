@@ -24,7 +24,7 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 // Definindo a URL base para o Axios.
-window.axios.defaults.baseURL = process.env.APP_URL;
+window.axios.defaults.baseURL = document.head.querySelector('meta[name="api-url"]').content;
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
