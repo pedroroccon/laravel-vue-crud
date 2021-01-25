@@ -14,8 +14,9 @@ Clone o repositório em uma pasta
 git clone https://github.com/pedroroccon/laravel-vue-crud
 ```
 
-Instale as dependência utilizando o Composer  
+Instale as dependência utilizando o Composer dentro do pasta do projeto  
 ```
+cd laravel-vue-crud
 php composer.phar install
 ```
 

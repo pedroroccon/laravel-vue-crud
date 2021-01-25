@@ -1,11 +1,11 @@
 class Errors {
+
     /**
      * Create a new Errors instance.
      */
     constructor() {
         this.errors = {};
     }
-
 
     /**
      * Determine if an errors exists for the given field.
@@ -16,14 +16,12 @@ class Errors {
         return this.errors.hasOwnProperty(field);
     }
 
-
     /**
      * Determine if we have any errors.
      */
     any() {
         return Object.keys(this.errors).length > 0;
     }
-
 
     /**
      * Retrieve the error message for a field.
@@ -36,7 +34,6 @@ class Errors {
         }
     }
 
-
     /**
      * Record the new errors.
      *
@@ -45,7 +42,6 @@ class Errors {
     record(errors) {
         this.errors = errors;
     }
-
 
     /**
      * Clear one or all error fields.
@@ -63,8 +59,8 @@ class Errors {
     }
 }
 
-
 class Form {
+
     /**
      * Create a new Form instance.
      *
@@ -76,10 +72,8 @@ class Form {
         for (let field in data) {
             this[field] = data[field];
         }
-
         this.errors = new Errors();
     }
-
 
     /**
      * Fetch all relevant data for the form.
@@ -90,10 +84,8 @@ class Form {
         for (let property in this.originalData) {
             data[property] = this[property];
         }
-
         return data;
     }
-
 
     /**
      * Reset the form fields.
