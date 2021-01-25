@@ -30,7 +30,7 @@ class ProdutoRequest extends FormRequest
         return [
             'codigo' => ['required', Rule::unique('produtos')->ignore(optional(request('produto'))->id)], 
             'titulo' => 'required', 
-            'valor' => 'required|numeric', 
+            'valor' => 'required|numeric|min:0', 
         ];
     }
 

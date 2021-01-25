@@ -29,6 +29,12 @@ Gere uma chave para a sua aplicação
 php artisan key:generate
 ```
 
+Por padrão, nós utilizamos SQLite como base de dados.  
+Caso você deseje continuar utilizando o SQLite, não se esqueça de criar o arquivo em database/database.sqlite  
+```
+touch database/database.sqlite
+```
+
 Faça a migração das bases de dados  
 ```
 php artisan migrate --seed
@@ -43,24 +49,43 @@ php artisan serve
 ```
 
 ## API endpoints
-Toda a API foi separada dentro da pasta */crud* do projeto.
+Toda a API foi separada dentro da pasta **/crud** do projeto, desta forma isolamos as regras de negócio da API em um pacote somente dela, facilitando a migração e implementação em outras versões do Laravel.
 
 ### Listar produtos
 ```
 GET /api/produto
 ```
+Você também pode filtrar os produtos utilizando alguns campos especiais na URL  
+```
+GET /api/produto?s={pesquisa} // Irá fazer uma busca por código/titulo
+GET /api/produto?codigo={seu_codigo} // Irá filtrar os produtos por código
+GET /api/produto?titulo={titulo} // Irá filtrar os produtos por título
+GET /api/produto?valor_inicial={valor} // Irá filtrar os produtos a partir de um valor inicial
+GET /api/produto?valor_final={valor} // Irá filtrar os produtos com o valor final menor que o informado
+```
+Também podemos combinar mais de um filtro na URL. Por exemplo, se quisermos filtrar um produto pelo código ou título com o valor menor que R$5.000,00, podemos usar a URL  
+```
+GET /api/produto?s=iPhone&valor_final=5000
+```
 
 ### Adicionar produtos
+Para adicionar um produto, faça uma chamada **POST** para o endereço abaixo  
 ```
 POST /api/produto
 ```
+Os seguintes campos são necessários para adicionar um produto  
+- Código (Obrigatório, único)
+- Título (Obrigatório)
+- Valor (Obrigatório, númerico)
 
 ### Editar produto
+Para editar um produto faça uma chamada **PUT/PATCH** para o endereço abaixo, substituindo o parâmetro **{id}** pelo ID do produto  
 ```
 PUT|PATCH /api/produto/{id}
 ```
 
 ### Remover produto
+Para remover um produto faça uma chamada **DELETE** para o endereço abaixo, substituindo o parâmetro **{id}** pelo ID do produto  
 ```
 DELETE /api/produto/{id}
 ```
