@@ -1,8 +1,10 @@
+![App screenshot](http://pedroroccon.com.br/laravel-vue-crud/images/preview.png "Laravel + Vue.js CRUD")
+
 # CRUD - Laravel + Vue.js
 Repositório criado com o objetivo de apresentar um simples CRUD utilizando Laravel + Vue.js. A aplicação consiste no gerenciamento de produtos.
 
 ## Demonstração
-Acesso uma demonstração deste pacote.
+Acessar a demo: [pedroroccon.com.br/laravel-vue-crud](http://pedroroccon.com.br/laravel-vue-crud/)
 
 ## Instalação e configuração
 Para realizar a instalação deste repositório, faça os seguintes passos em seu terminal:
@@ -41,16 +43,33 @@ php artisan serve
 ```
 
 ## API endpoints
+Toda a API foi separada dentro da pasta */crud* do projeto.
 
 ### Listar produtos
 ```
-GET /api/produtos
+GET /api/produto
 ```
 
 ### Adicionar produtos
+```
+POST /api/produto
+```
 
 ### Editar produto
+```
+PUT|PATCH /api/produto/{id}
+```
 
 ### Remover produto
+```
+DELETE /api/produto/{id}
+```
 
 ## Factories
+As factories são utilizadas para criar os produtos de forma dinâmia.
+Você pode utilizar as factories através do comando  
+
+```
+php artisan tinker
+Crud\Models\Produto::factory()->create()
+```
