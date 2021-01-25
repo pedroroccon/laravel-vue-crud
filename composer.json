@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "pedroroccon/laravel-vue-crud",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Pacote simples exibindo como é feito um CRUD usando Laravel + Vue.js.",
     "keywords": [
         "framework",
         "laravel"
