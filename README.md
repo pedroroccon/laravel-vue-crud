@@ -79,6 +79,12 @@ Os seguintes campos são necessários para adicionar um produto
 - Título (Obrigatório)
 - Valor (Obrigatório, númerico)
 
+### Visualizar produto
+Para visualizar um produto faça uma chamada **GET** para o endereço abaixo, substituindo o parâmetro **{id}** pelo ID do produto  
+```
+GET /api/produto/{id}
+```
+
 ### Editar produto
 Para editar um produto faça uma chamada **PUT/PATCH** para o endereço abaixo, substituindo o parâmetro **{id}** pelo ID do produto  
 ```

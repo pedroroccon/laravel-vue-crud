@@ -26,6 +26,29 @@ class Produto extends Model
     ];
 
     /**
+     * Define atributos que 
+     * deverão ser mesclados 
+     * com o recurso.
+     * 
+     * @var array
+     */
+    protected $appends = [
+        'path',
+    ];
+
+    /**
+     * Definindo um accessor para o 
+     * atributo path, responsável por 
+     * retornar o caminho do recurso.
+     * 
+     * @return string
+     */
+    public function getPathAttribute()
+    {
+        return '/produto/' . $this->id;
+    }
+
+    /**
      * Definindo um accessor para o 
      * atributo valor, convertendo 
      * o valor armazenado de centavos 

@@ -41,7 +41,7 @@
                     </div>
                     <div class="content">
                         <div class="info">
-                            <h4 class="title">{{ produto.titulo }}</h4>
+                            <h4 class="title"><a :href="produto.path" target="_blank">{{ produto.titulo }}</a></h4>
                             <span class="price my-2">{{ produto.valor | moeda }}</span>
                             <span class="d-block text-muted">Código: {{ produto.codigo }}</span>
                         </div>
@@ -152,7 +152,7 @@
     export default {
         data() {
             return {
-                produtos: null, 
+                produtos: {}, 
                 total: 0,
                 valor: 0, 
                 search: '', 
